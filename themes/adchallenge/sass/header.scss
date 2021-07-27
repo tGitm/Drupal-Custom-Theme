@@ -1,0 +1,64 @@
+$menu_items: #fff;
+
+header {
+    height: 99px;
+    left: 0px;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.25);
+    mix-blend-mode: normal;
+    position: sticky;
+    padding: 0 190px;   //po tej širini bom kasneje pozicioniral celotno vsebino
+
+    #block-adchallenge-branding {
+        flex: 3;
+        display: flex;
+        align-items: center;
+    }
+    #block-adchallenge-main-menu {
+        display: flex;
+        flex: 9;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .region.region-header {
+        display: flex;
+        padding-top: 16px;
+    }
+    .site-slogan {
+        padding-left: 30px;
+        color: $menu_items;
+        font-size: 24px;
+        font-weight: 300;
+    }
+    ul.menu {
+        display: flex;
+    }
+    .menu-item:not(:last-child) {
+        margin-right: 42px;
+        padding-bottom: 5px;
+    }
+    
+    .menu-item {
+        border-bottom: 2px solid transparent;  
+        border-radius: 1px; 
+    }
+
+    //onclick active
+        .active-link {
+            border-color: #0097A7;
+        }
+    
+    .menu .menu-item a {
+        color: $menu_items;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 14px;
+        text-decoration: none;
+        //transition: 0.1s;
+
+        &:hover {
+            border-top: 2px solid #0097A7;
+            border-radius: 1px;
+        }
+    }
+}
