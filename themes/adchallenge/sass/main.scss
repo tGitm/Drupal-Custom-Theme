@@ -11,10 +11,18 @@ body {
     width: 1440px;
     font-style: normal;
     margin: 0 auto;
+
+    @media(max-width: 1024px) {
+        width: 1024px;
+    }
+    @media(max-width: 440px) {
+        width: 414px;
+    }
 }
 p {
     color: $paragraph;
     font-size: 16px;
+    text-align: justify;
 }
 a {
     color: $title;
@@ -98,6 +106,10 @@ main {
     /* LATEST NEWS */
     #block-adchallenge-content {
         padding: 8% 190px;
+
+        @media(max-width: 1024px) {
+            padding: 80px 20px;
+        }
         h2:first-child {
             @include h2_titles;
 
@@ -107,8 +119,14 @@ main {
                 content: "";
             }
         }
+        @media (max-width: 440px) {
+            .view-content {    
+                flex-direction: column;
+            }    
+        }
         .view-content {
             display: flex;
+           
             .createdDate {
                 font-size: 12px;
                 color: $dates;
@@ -157,6 +175,11 @@ main {
                 width: 310px;
                 height: 203px;
 
+                @media (max-width: 1024px) {
+                    width: 250px;
+                    height: 190px;
+                }
+
                 &:hover {
                     transform: translateY(-8px);
                 }
@@ -166,6 +189,11 @@ main {
             }
             .views-row:not(:last-child) {
                 padding-right: 70px;
+            }
+            @media (max-width: 1024px) {
+                .views-row:not(:last-child) {
+                    padding-right: 30px;
+                }
             }
             p {
                 @include paragraphs;
@@ -177,9 +205,25 @@ main {
     #block-latest-event {
         padding: 8% 190px;
         background-color: #161E21;
+        @media (max-width: 1024px) {
+            padding: 8% 20px;
+
+            .img-left {
+                padding-right: 50px;
+            }
+        }
 
         .container {
             display: flex;
+        }
+
+        @media (max-width: 440px) {
+            .container {
+                flex-direction: column;
+            }
+            img.image-style-article-teaser {
+                width: 353px;
+            }
         }
 
         .img-left {
@@ -195,6 +239,7 @@ main {
         #challenge-event {
             display: flex;
         }
+        
         h2 {
             @include h2_titles;
             &:after {
@@ -205,11 +250,31 @@ main {
         }
     }
 
-    /* ABOUT ME SECTION */
-
+    /* ABOUT ME SECTION */ 
+    
     #challenge-about-me {
         display: flex;
         padding: 245px 190px;
+
+        @media (max-width: 1024px) {
+            padding: 245px 20px;
+            .img-right {
+                margin-right: 100px;
+            }
+            .content-left {
+                padding-right: 50px;
+            }
+        }
+        @media (max-width: 440px) {
+            padding: 50px 20px 200px 20px;
+            flex-direction: column;
+
+            img.image-style-about-me {
+                z-index: 1;
+                width: 349px;
+                height: 340px;
+            }
+        }
 
         .content-left {
             flex: 5;
@@ -243,6 +308,7 @@ main {
                 margin-left: -160px;
                 margin-top: -100px;
             }
+            
             &:after {
                 z-index: -10;
                 position: absolute;
@@ -254,6 +320,10 @@ main {
                 height: 150px;
                 background: #1D1524;
                 transform: rotate(-45deg);
+                @media (max-width: 440px) {
+                    margin-left: 182px;
+                    
+                }
             }
         }
     }
